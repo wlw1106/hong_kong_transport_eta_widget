@@ -23,6 +23,7 @@
 > 請務必跟從本文指示完成設定，不要修改其他部分！
 
 ```
+///////**************///////////// 例子 ////////////******************/////////
 // 1. 設定你的路線資料
 // For MTR & LRT, please specify 'dir: "UP / DOWN"'
 // For LRT & MTR Bus, please specify company: "LRT" / "MTRB"
@@ -41,15 +42,84 @@ const URL_CONFIG = [
 ```
 <table>
   <tr>
+    <th colspan="2">參數說明</th>
+    <th colspan="2">例子</th>
+  </tr>
+  <tr>
+    <td>route (required)</td>
+    <td><b>路線</b></td>
     <td colspan="2">
-      參數說明
+      巴士 - "968", "960", "15", "1", "8", "37A", "276A"...<br>
+      地鐵 - "EAL" (東鐵線)、"TCL" (東涌線)、"TWL" (荃灣線)<br>
+      【港鐵路線代碼詳見下文】<br>
+      輕鐵 - "614", "761P", "505"...
     </td>
   </tr>
   <tr>
-    <td>route</td>
-    <td>路線，例子：<br>巴士 - 968, 960, 15, 1, 8, 37A, 276A...<br>地鐵 - EAL (東鐵線)、TCL (東涌線)、TWL (荃灣線)<br>路線代碼詳見下文</td>
+    <td>stn (required)</td>
+    <td><b>車站編碼</b></td>
+    <td colspan="2">
+      巴士 - "F88D7720B4F389B0", "002571", "K66-D020"...<br>
+      【巴士站 ID 搜尋方法詳見下文】<br>
+      地鐵 - "HOK" (香港站)、"ADM" (金鐘站)、"KOT" (九龍塘站)<br>
+      輕鐵 - "100", "280", "920"...<br>
+      【港鐵及輕鐵站代碼詳見下文】
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="9">company (required)</td>
+    <td rowspan="9"><b>營運公司</b></td>   
+    <td>九龍巴士</td>
+    <td><b>KMB</b></td>
+  </tr>
+  <tr>
+    <td>龍運機場巴士</td>
+    <td><b>LMB</b></td>
+  </tr>
+  <tr>
+    <td>城巴/城巴機場快線</td>
+    <td><b>CTB</b></td>
+  </tr>
+  <tr>
+    <td>新大嶼山巴士</td>
+    <td><b>-</b></td>
+  </tr>
+  <tr>
+    <td>港鐵</td>
+    <td><b>MTR</b></td>
+  </tr>
+  <tr>
+    <td>港鐵巴士</td>
+    <td><b>MTRB</b></td>
+  </tr>
+  <tr>
+    <td>輕鐵</td>
+    <td><b>LRT</b></td>
+  </tr>
+  <tr>
+    <td>綠色專綫小巴</td>
+    <td><b>-</b></td>
+  </tr>
+  <tr>
+    <td>電車</td>
+    <td>-</td>
+  </tr>
+    <tr>
+    <td>dir</td>
+    <td><b>列車運行方向</b></td>
+    <td colspan="2">
+      【只適用於港鐵及輕鐵】<br>
+      "UP": 上行<br>
+      "DOWN"：下行
+    </td>
   </tr>
 </table>
-type: 交通工具類型 (Bus / MTR / Light Rail / Minibus)。
-route / line: 路線編號或線路簡稱。
-stopId / station: 具體的車站編號或代碼。
+
+> [!Important]
+> 當您在 `URL_CONFIG` 中新增或修改路線時，請確保遵循以下格式，**否則腳本將無法執行**：
+> 1. **使用大括號 { }**：每一條路線必須被一對 { } 包圍。
+> 2. **使用英文引號 ""**：所有項目內容（如 "K17"）都必須加上雙引號。
+> 3. **正確使用逗號**，隔開：
+> - 括號內的每個項目（如 route 與 stn 之間）
+> - 兩組路線之間也必須加上逗號
+> - 但最後一組**不用**加上逗號結尾，如例子中的 輕鐵 505
