@@ -2,7 +2,7 @@
 <img alt="App Preview Large" src="https://github.com/user-attachments/assets/1814dcf8-9bc9-4e85-b455-23dd2642167d" width="49%">
 <img alt="App Preview Medium" src="https://github.com/user-attachments/assets/e2ee8ac7-6e39-4478-aab6-66f0e3cb5fb0" width="49%"><br>
 這是一款以 Scriptable App 作基礎的 iOS 桌面小工具 (Widget)，旨在為香港人通勤或出門時提供最直覺、最快速的即時交通資訊。<br>
-透過整合多方數據，將巴士、港鐵、輕鐵及小巴等交通工具的到站預報匯聚於單一介面，讓您的日常出行更加從容。<br><br>
+透過整合多方數據，將巴士、港鐵、輕鐵及小巴等交通工具的到站預報匯聚於單一介面，讓您的日常出行更加方便。<br><br>
 
 > [!NOTE]
 > 暫時不支援【小巴】【大嶼山巴士】【電車】，正在全力開發中 🤖
