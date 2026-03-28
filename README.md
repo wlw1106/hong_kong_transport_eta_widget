@@ -8,6 +8,11 @@
 > 暫時不支援【小巴】【大嶼山巴士】【電車】，正在全力開發中 🤖
 
 ## 安裝方法 (使用 Scriptable APP) 
+<a href="https://apps.apple.com/us/app/scriptable/id1405459188">
+  <img width="150" alt="Scriptable APP" src="https://github.com/user-attachments/assets/6e5de8fe-4ef0-4bfc-9ba0-3aac615695ee">
+  <img height="100" alt="image" src="https://github.com/user-attachments/assets/b540eab1-ca54-484a-9532-f1d3e8471282">
+</a><br>
+
 1. 在 App Store 下載並安裝 Scriptable App。
 2. 複製本專案中的 `hk_transport_eta.js` 程式碼。
 3. 打開 **Scriptable**，點擊右上方 「+」 號，貼上程式碼並命名為「追車啦 2.0」。
