@@ -51,7 +51,7 @@ const URL_CONFIG = [
     <th colspan="2">例子</th>
   </tr>
   <tr>
-    <td>route (required)</td>
+    <td><i>route</i> (required)</td>
     <td><b>路線</b></td>
     <td colspan="2">
       巴士 - "968", "960", "15", "1", "8", "37A", "276A"<br>
@@ -61,7 +61,7 @@ const URL_CONFIG = [
     </td>
   </tr>
   <tr>
-    <td>stn (required)</td>
+    <td><i>stn</i> (required)</td>
     <td><b>車站編碼</b></td>
     <td colspan="2">
       巴士 - "F88D7720B4F389B0", "002571", "K66-D020"<br>
@@ -72,7 +72,7 @@ const URL_CONFIG = [
     </td>
   </tr>
   <tr>
-    <td rowspan="9">company (required)</td>
+    <td rowspan="9"><i>company</i> (required)</td>
     <td rowspan="9"><b>營運公司</b></td>   
     <td>九龍巴士</td>
     <td><b>KMB</b></td>
@@ -110,7 +110,7 @@ const URL_CONFIG = [
     <td>-</td>
   </tr>
     <tr>
-    <td>dir</td>
+    <td><i>dir</i></td>
     <td><b>列車運行方向</b></td>
     <td colspan="2">
       【只適用於港鐵及輕鐵】<br>
@@ -123,13 +123,14 @@ const URL_CONFIG = [
 > [!Important]
 > 當您在 `URL_CONFIG` 中新增或修改路線時，請確保遵循以下格式，**否則腳本將無法執行**：
 > 1. **使用大括號 { }**：每一條路線必須被一對 { } 包圍。
-> 2. **使用英文引號 ""**：所有項目內容（如 "K17"）都必須加上雙引號。
+> 2. **使用英文引號 ""**：所有項目內容 (如 "K17") 都必須加上雙引號。
 > 3. **正確使用逗號**，隔開：
-> - 括號內的每個項目（如 route 與 stn 之間）
+> - 括號內的每個項目 (如 `route` 與 `stn` 之間)
 > - 兩組路線之間也必須加上逗號
 > - 但最後一組**不用**加上逗號結尾，如例子中的 輕鐵 505
 
 ## 九龍巴士 (KMB) & 龍運機場巴士 (LWB)
+<img src="https://github.com/user-attachments/assets/cc5b656a-7dc2-4054-a9fb-6f1803c67161" alt="App Screenshot" width="40%">
 
 > [!NOTE]
 > 請<a href="https://ewlricw.rf.gd/chasela2/kmb">按此</a>以查詢九巴及龍運的車站代碼。
