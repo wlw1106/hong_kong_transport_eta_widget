@@ -130,3 +130,6 @@ const URL_CONFIG = [
 > - 但最後一組**不用**加上逗號結尾，如例子中的 輕鐵 505
 
 ## 九龍巴士 (KMB) & 龍運機場巴士 (LWB)
+
+> [!NOTE]
+> 請<a href="https://ewlricw.rf.gd/chasela2/kmb">按此</a>以查詢九巴及龍運的車站代碼。
