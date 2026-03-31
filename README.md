@@ -129,6 +129,20 @@ const URL_CONFIG = [
 > - 兩組路線之間也必須加上逗號
 > - 但最後一組**不用**加上逗號結尾，如例子中的 輕鐵 505
 
+## 選擇顯示項目
+- 每一個小工具均可自定義顯示<b>最多 5 條 (中尺寸) / 10 條 (大尺寸) 路線</b>
+- 如不定義顯示項目，系統將自動顯示<b>前 5 / 10 條</b>在服務時間内的路線
+- 你可以於主畫面加入多個小工具，但需注意儲存空間限制 (memory limitation)
+<img width="100%" alt="Code Screenshot" src="https://github.com/user-attachments/assets/2bccc3d8-7d59-47be-a81f-bef4d40143cc" />
+<b>設定方法：</b>
+
+1. 長按小工具，選擇【編輯小工具】
+2. 在`Parameter`中根據路線的次序輸入 (以半型逗號分隔數字)
+3. 點擊空白處以完成編輯
+4. 重新整理後便能顯示所選路線
+
+假設我們想顯示 **K17、A41P、37A、N368 和 港鐵南港島線**，我們要在`Parameter`中輸入 _1,3,5,7,9_ 。
+
 ## 九龍巴士 (KMB) & 龍運機場巴士 (LWB)
 <img src="https://github.com/user-attachments/assets/08a7402a-f21e-40c8-876c-e6adc14c2ac7" alt="App Screenshot" height="150">
 <img src="https://github.com/user-attachments/assets/cc5b656a-7dc2-4054-a9fb-6f1803c67161" alt="App Screenshot" height="150">
