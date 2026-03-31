@@ -149,3 +149,26 @@ const URL_CONFIG = [
 
 > [!NOTE]
 > 請<a href="https://ewlricw.rf.gd/chasela2/kmb">按此</a>以查詢九巴及龍運的車站代碼。
+
+<table>
+  <tr>
+    <th>訊息描述</th>
+    <th>説明</th>
+  </tr>
+  <tr>
+    <td>6 分鐘</td>
+    <td>下一班車將於 6 分鐘内到達該站。</td>
+  </tr>
+  <tr>
+    <td>即將到達/已離開</td>
+    <td>下一班車將於 1 分鐘内到達該站，代表巴士即將到達或即將離開。</td>
+  </tr>
+  <tr>
+    <td>🟡 <i>巴士服務訊息</i></td>
+    <td>該路線現時沒有服務，原因可能為服務已結束或特別服務時間。</td>
+  </tr>
+  <tr>
+    <td>🔴 非服務時間</td>
+    <td>現時為該路線的非服務時間。</td>
+  </tr>
+</table>
