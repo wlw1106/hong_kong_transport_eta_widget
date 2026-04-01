@@ -133,7 +133,7 @@ const URL_CONFIG = [
 - 每一個小工具均可自定義顯示<b>最多 5 條 (中尺寸) / 10 條 (大尺寸) 路線</b>
 - 如不定義顯示項目，系統將自動顯示<b>前 5 / 10 條</b>在服務時間内的路線
 - 你可以於主畫面加入多個小工具，但需注意儲存空間限制 (memory limitation)
-<img width="100%" alt="Code Screenshot" src="https://github.com/user-attachments/assets/2bccc3d8-7d59-47be-a81f-bef4d40143cc" />
+<img width="90%" alt="Code Screenshot" src="https://github.com/user-attachments/assets/2bccc3d8-7d59-47be-a81f-bef4d40143cc"><br>
 <b>設定方法：</b>
 
 1. 長按小工具，選擇【編輯小工具】
@@ -150,7 +150,7 @@ const URL_CONFIG = [
 > [!NOTE]
 > 請<a href="https://ewlricw.rf.gd/chasela2/kmb">按此</a>以查詢九巴及龍運的車站代碼。
 
-<img src="https://github.com/user-attachments/assets/49d285ac-72b2-401e-a5b9-010e39b10d58" alt="App Screenshot" width="280">
+<img src="https://github.com/user-attachments/assets/49d285ac-72b2-401e-a5b9-010e39b10d58" alt="App Screenshot" height="150">
 
 <table>
   <tr>
