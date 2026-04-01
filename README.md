@@ -150,6 +150,8 @@ const URL_CONFIG = [
 > [!NOTE]
 > 請<a href="https://ewlricw.rf.gd/chasela2/kmb">按此</a>以查詢九巴及龍運的車站代碼。
 
+<img src="https://github.com/user-attachments/assets/49d285ac-72b2-401e-a5b9-010e39b10d58" alt="App Screenshot" width="280">
+
 <table>
   <tr>
     <th>訊息描述</th>
