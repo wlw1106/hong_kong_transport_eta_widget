@@ -5,7 +5,7 @@
 透過整合多方數據，將巴士、港鐵、輕鐵及小巴等交通工具的到站預報匯聚於單一介面，讓您的日常出行更加方便。<br><br>
 
 > [!NOTE]
-> 暫時不支援【小巴】【大嶼山巴士】【電車】，正在全力開發中 🤖
+> 暫時不支援【小巴】【大嶼山巴士】，正在全力開發中 🤖
 
 ## 安裝方法 (使用 Scriptable APP) 
 <a href="https://apps.apple.com/us/app/scriptable/id1405459188">
@@ -107,7 +107,7 @@ const URL_CONFIG = [
   </tr>
   <tr>
     <td>電車</td>
-    <td>-</td>
+    <td>【已失效】</td>
   </tr>
     <tr>
     <td><i>dir</i></td>
@@ -148,7 +148,7 @@ const URL_CONFIG = [
 <img src="https://github.com/user-attachments/assets/cc5b656a-7dc2-4054-a9fb-6f1803c67161" alt="App Screenshot" height="150">
 
 > [!NOTE]
-> 請<a href="https://ewlricw.rf.gd/chasela2/kmb">按此</a>以查詢九巴及龍運的車站代碼。
+> 請<a href="https://ewlricw.rf.gd/chasela2/kmb" target="_blank">按此</a>以查詢九巴及龍運的車站代碼。
 
 <img src="https://github.com/user-attachments/assets/49d285ac-72b2-401e-a5b9-010e39b10d58" alt="App Screenshot" height="150">
 
