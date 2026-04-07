@@ -148,7 +148,7 @@ const URL_CONFIG = [
 <img src="https://github.com/user-attachments/assets/cc5b656a-7dc2-4054-a9fb-6f1803c67161" alt="App Screenshot" height="150">
 
 > [!NOTE]
-> 請<a href="https://ewlricw.rf.gd/chasela2/kmb" target="_blank" rel="noopener noreferrer">按此</a>以查詢九巴及龍運的車站代碼。
+> 請<a href="https://ewlricw.rf.gd/chasela2/kmb">按此</a>以查詢九巴及龍運的車站代碼。
 
 <img src="https://github.com/user-attachments/assets/49d285ac-72b2-401e-a5b9-010e39b10d58" alt="App Screenshot" height="150">
 
