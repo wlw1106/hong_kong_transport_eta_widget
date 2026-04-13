@@ -571,6 +571,10 @@ const URL_CONFIG = [
     <td>下一班車將於 1 分鐘内到達該站，代表列車已經到達月台並即將離開。</td>
   </tr>
   <tr>
+    <td>⚠️ 定義列車方向</td>
+    <td>用戶未定義列車運行方向，請於 <code>URL_CONFIG</code> 中定義 <code>dir</code> 。</td>
+  </tr>
+  <tr>
     <td>🟡 <i>特別服務訊息</i></td>
     <td>該路線現時實施特別服務安排，請留意車站資訊。</td>
   </tr>
