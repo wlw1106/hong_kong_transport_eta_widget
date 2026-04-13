@@ -107,7 +107,7 @@ const URL_CONFIG = [
   </tr>
   <tr>
     <td>電車</td>
-    <td>【已失效】</td>
+    <td><b>【已失效】</b></td>
   </tr>
     <tr>
     <td><i>dir</i></td>
