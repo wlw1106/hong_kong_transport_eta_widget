@@ -224,6 +224,7 @@ const URL_CONFIG = [
 </table>
 
 ## 港鐵 (MTR)
+### 港鐵路線代碼
 <table>
   <tr>
     <th colspan="8">港鐵路線代碼總覽</th>
@@ -260,44 +261,255 @@ const URL_CONFIG = [
   </tr>
 </table>
 
+### 港鐵車站代碼
+<!-- 1. 機場快線 (AEL) & 東涌線 (TCL) & 迪士尼線 (DRL) -->
 <table>
+  <tr><th colspan="8">機場快線、東涌線及迪士尼線車站代碼</th></tr>
   <tr>
-    <th colspan="8">東涌綫車站代碼總覽</th>
+    <td>香港</td><td><b>HOK</b></td>
+    <td>九龍</td><td><b>KOW</b></td>
+    <td>青衣</td><td><b>TSY</b></td>
+    <td>機場</td><td><b>AIR</b></td>
   </tr>
   <tr>
-    <td>香港</td>
-    <td><b>HOK</b></td>
-    <td>奧運</td>
-    <td><b>OLY</b></td>
-    <td>荔景</td>
-    <td><b>LAK</b></td>
-    <td>欣澳</td>
-    <td><b>SUN</b></td>    
+    <td>博覽館</td><td><b>AWE</b></td>
+    <td>奧運</td><td><b>OLY</b></td>
+    <td>南昌</td><td><b>NAC</b></td>
+    <td>荔景</td><td><b>LAK</b></td>
   </tr>
   <tr>
-    <td>九龍</td>
-    <td><b>KOW</b></td>
-    <td>南昌</td>
-    <td><b>NAC</b></td>
-    <td>青衣</td>
-    <td><b>TSY</b></td>
-    <td>東涌</td>
-    <td><b>TUC</b></td>
+    <td>欣澳</td><td><b>SUN</b></td>
+    <td>東涌</td><td><b>TUC</b></td>
+    <td>欣澳</td><td><b>SUN</b></td>
+    <td>迪士尼</td><td><b>DIS</b></td>
   </tr>
 </table>
 
+<!-- 2. 屯馬線 (TML) -->
+<table>
+  <tr><th colspan="8">屯馬線車站代碼總覽</th></tr>
+  <tr>
+    <td>屯門</td><td><b>TUM</b></td>
+    <td>兆康</td><td><b>SIH</b></td>
+    <td>天水圍</td><td><b>TIS</b></td>
+    <td>朗屏</td><td><b>LOP</b></td>
+  </tr>
+  <tr>
+    <td>元朗</td><td><b>YUL</b></td>
+    <td>錦上路</td><td><b>KSR</b></td>
+    <td>荃灣西</td><td><b>TWW</b></td>
+    <td>美孚</td><td><b>MEF</b></td>
+  </tr>
+  <tr>
+    <td>南昌</td><td><b>NAC</b></td>
+    <td>柯士甸</td><td><b>AUS</b></td>
+    <td>尖東</td><td><b>ETS</b></td>
+    <td>紅磡</td><td><b>HUH</b></td>
+  </tr>
+  <tr>
+    <td>何文田</td><td><b>HOM</b></td>
+    <td>土瓜灣</td><td><b>TKW</b></td>
+    <td>宋皇臺</td><td><b>SUW</b></td>
+    <td>啟德</td><td><b>KAT</b></td>
+  </tr>
+  <tr>
+    <td>鑽石山</td><td><b>DIH</b></td>
+    <td>顯徑</td><td><b>HIK</b></td>
+    <td>大圍</td><td><b>TAW</b></td>
+    <td>車公廟</td><td><b>CKM</b></td>
+  </tr>
+  <tr>
+    <td>沙田圍</td><td><b>STW</b></td>
+    <td>第一城</td><td><b>CIO</b></td>
+    <td>石門</td><td><b>SHM</b></td>
+    <td>大水坑</td><td><b>TSH</b></td>
+  </tr>
+  <tr>
+    <td>馬鞍山</td><td><b>MOS</b></td>
+    <td>恆安</td><td><b>HEA</b></td>
+    <td>烏溪沙</td><td><b>WKS</b></td>
+    <td></td><td></td>
+  </tr>
+</table>
+
+<!-- 3. 將軍澳線 (TKL) -->
+<table>
+  <tr><th colspan="8">將軍澳線車站代碼總覽</th></tr>
+  <tr>
+    <td>北角</td><td><b>NOP</b></td>
+    <td>鰂魚涌</td><td><b>QUB</b></td>
+    <td>油塘</td><td><b>YAT</b></td>
+    <td>調景嶺</td><td><b>TIK</b></td>
+  </tr>
+  <tr>
+    <td>將軍澳</td><td><b>TKO</b></td>
+    <td>坑口</td><td><b>HAH</b></td>
+    <td>寶琳</td><td><b>POA</b></td>
+    <td>康城</td><td><b>LHP</b></td>
+  </tr>
+</table>
+
+<!-- 4. 東鐵線 (EAL) -->
+<table>
+  <tr><th colspan="8">東鐵線車站代碼總覽</th></tr>
+  <tr>
+    <td>金鐘</td><td><b>ADM</b></td>
+    <td>會展</td><td><b>EXH</b></td>
+    <td>紅磡</td><td><b>HUH</b></td>
+    <td>旺角東</td><td><b>MKK</b></td>
+  </tr>
+  <tr>
+    <td>九龍塘</td><td><b>KOT</b></td>
+    <td>大圍</td><td><b>TAW</b></td>
+    <td>沙田</td><td><b>SHT</b></td>
+    <td>火炭</td><td><b>FOT</b></td>
+  </tr>
+  <tr>
+    <td>馬場</td><td><b>RAC</b></td>
+    <td>大學</td><td><b>UNI</b></td>
+    <td>大埔墟</td><td><b>TAP</b></td>
+    <td>太和</td><td><b>TWO</b></td>
+  </tr>
+  <tr>
+    <td>粉嶺</td><td><b>FAN</b></td>
+    <td>上水</td><td><b>SHS</b></td>
+    <td>羅湖</td><td><b>LOW</b></td>
+    <td>落馬洲</td><td><b>LMC</b></td>
+  </tr>
+</table>
+
+<!-- 5. 南港島線 (SIL)  -->
+<table>
+  <tr><th colspan="10">南港島線車站代碼</th></tr>
+  <tr>
+    <td>金鐘</td><td><b>ADM</b></td>
+    <td>海洋公園</td><td><b>OCP</b></td>
+    <td>黃竹坑</td><td><b>WCH</b></td>
+    <td>利東</td><td><b>LET</b></td>
+    <td>海怡半島</td><td><b>SOH</b></td>
+  </tr>
+</table>
+
+<!-- 6. 港島線 (ISL) -->
+<table>
+  <tr><th colspan="8">港島線車站代碼總覽</th></tr>
+  <tr>
+    <td>堅尼地城</td><td><b>KET</b></td>
+    <td>香港大學</td><td><b>HKU</b></td>
+    <td>西營盤</td><td><b>SYP</b></td>
+  </tr>
+  <tr>
+    <td>上環</td><td><b>SHW</b></td>
+    <td>中環</td><td><b>CEN</b></td>
+    <td>金鐘</td><td><b>ADM</b></td>
+  </tr>
+  <tr>
+    <td>灣仔</td><td><b>WAC</b></td>
+    <td>銅鑼灣</td><td><b>CAB</b></td>
+    <td>天后</td><td><b>TIH</b></td>
+  </tr>
+  <tr>
+    <td>炮台山</td><td><b>FOH</b></td>
+    <td>北角</td><td><b>NOP</b></td>
+    <td>鰂魚涌</td><td><b>QUB</b></td>
+  </tr>
+  <tr>
+    <td>太古</td><td><b>TAK</b></td>
+    <td>西灣河</td><td><b>SWH</b></td>
+    <td>筲箕灣</td><td><b>SKW</b></td>
+  </tr>
+  <tr>
+    <td>杏花邨</td><td><b>HFC</b></td>
+    <td>柴灣</td><td><b>CHW</b></td>
+    <td></td><td></td>
+  </tr>
+</table>
+
+<!-- 7. 荃灣線 (TWL) -->
+<table>
+  <tr><th colspan="8">荃灣線車站代碼總覽</th></tr>
+  <tr>
+    <td>中環</td><td><b>CEN</b></td>
+    <td>金鐘</td><td><b>ADM</b></td>
+    <td>尖沙咀</td><td><b>TST</b></td>
+    <td>佐敦</td><td><b>JOR</b></td>
+  </tr>
+  <tr>
+    <td>油麻地</td><td><b>YMT</b></td>
+    <td>旺角</td><td><b>MOK</b></td>
+    <td>太子</td><td><b>PRE</b></td>
+    <td>深水埗</td><td><b>SSP</b></td>
+  </tr>
+  <tr>
+    <td>長沙灣</td><td><b>CSW</b></td>
+    <td>荔枝角</td><td><b>LCK</b></td>
+    <td>美孚</td><td><b>MEF</b></td>
+    <td>荔景</td><td><b>LAK</b></td>
+  </tr>
+  <tr>
+    <td>葵芳</td><td><b>KWF</b></td>
+    <td>葵興</td><td><b>KWH</b></td>
+    <td>大窩口</td><td><b>TWH</b></td>
+    <td>荃灣</td><td><b>TSW</b></td>
+  </tr>
+</table>
+
+<!-- 8. 觀塘線 (KTL) -->
+<table>
+  <tr><th colspan="8">觀塘線車站代碼總覽</th></tr>
+  <tr>
+    <td>黃埔</td><td><b>WHA</b></td>
+    <td>何文田</td><td><b>HOM</b></td>
+    <td>油麻地</td><td><b>YMT</b></td>
+  </tr>
+  <tr>
+    <td>旺角</td><td><b>MOK</b></td>
+    <td>太子</td><td><b>PRE</b></td>
+    <td>石硤尾</td><td><b>SKM</b></td>
+  </tr>
+  <tr>
+    <td>九龍塘</td><td><b>KOT</b></td>
+    <td>樂富</td><td><b>LOF</b></td>
+    <td>黃大仙</td><td><b>WTS</b></td>
+  </tr>
+  <tr>
+    <td>鑽石山</td><td><b>DIH</b></td>
+    <td>彩虹</td><td><b>CHO</b></td>
+    <td>九龍灣</td><td><b>KOB</b></td>
+  </tr>
+  <tr>
+    <td>牛頭角</td><td><b>NTK</b></td>
+    <td>觀塘</td><td><b>KWT</b></td>
+    <td>藍田</td><td><b>LAT</b></td>
+  </tr>
+  <tr>
+    <td>油塘</td><td><b>YAT</b></td>
+    <td>調景嶺</td><td><b>TIK</b></td>
+    <td></td><td></td>
+  </tr>
+</table>
+
+### 訊息描述
 <table>
   <tr>
     <th>訊息描述</th>
     <th>説明</th>
   </tr>
   <tr>
-    <td>6 分鐘</td>
-    <td>下一班車將於 6 分鐘内到達該站。</td>
+    <td>4 分鐘</td>
+    <td>下一班車將於 4 分鐘内到達該站。</td>
   </tr>
   <tr>
-    <td>即將到達/已離開</td>
-    <td>下一班車將於 1 分鐘内到達該站，代表巴士即將到達或即將離開。</td>
+    <td>即將抵達</td>
+    <td>下一班車將於 2 分鐘内到達該站，代表列車即將到達月台。</td>
+  </tr>
+  <tr>
+    <td>正在離開</td>
+    <td>下一班車將於 1 分鐘内到達該站，代表列車已經到達月台並即將離開。</td>
+  </tr>
+  <tr>
+    <td>🟡 <i>特別服務訊息</i></td>
+    <td>該路線現時實施特別服務安排，請留意車站資訊。</td>
   </tr>
   <tr>
     <td>🔴 非服務時間</td>
