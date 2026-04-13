@@ -174,3 +174,133 @@ const URL_CONFIG = [
     <td>現時為該路線的非服務時間。</td>
   </tr>
 </table>
+
+## 城巴及城巴機場快線 (CTB)
+
+> [!NOTE]
+> 請<a href="https://ewlricw.rf.gd/chasela2/ctb">按此</a>以查詢九巴及龍運的車站代碼。
+
+<table>
+  <tr>
+    <th>訊息描述</th>
+    <th>説明</th>
+  </tr>
+  <tr>
+    <td>6 分鐘</td>
+    <td>下一班車將於 6 分鐘内到達該站。</td>
+  </tr>
+  <tr>
+    <td>即將到達/已離開</td>
+    <td>下一班車將於 1 分鐘内到達該站，代表巴士即將到達或即將離開。</td>
+  </tr>
+  <tr>
+    <td>🔴 非服務時間</td>
+    <td>現時為該路線的非服務時間。</td>
+  </tr>
+</table>
+
+## 新大嶼山巴士 (NLB)
+
+> [!NOTE]
+> 請<a href="https://ewlricw.rf.gd/chasela2/nlb">按此</a>以查詢九巴及龍運的車站代碼。
+
+<table>
+  <tr>
+    <th>訊息描述</th>
+    <th>説明</th>
+  </tr>
+  <tr>
+    <td>6 分鐘</td>
+    <td>下一班車將於 6 分鐘内到達該站。</td>
+  </tr>
+  <tr>
+    <td>即將到達/已離開</td>
+    <td>下一班車將於 1 分鐘内到達該站，代表巴士即將到達或即將離開。</td>
+  </tr>
+  <tr>
+    <td>🔴 非服務時間</td>
+    <td>現時為該路線的非服務時間。</td>
+  </tr>
+</table>
+
+## 港鐵 (MTR)
+<table>
+  <tr>
+    <th colspan="8">港鐵路線代碼總覽</th>
+  </tr>
+  <tr>
+    <td>機場快線</td>
+    <td><b>AEL</b></td>
+    <td>將軍澳線</td>
+    <td><b>TKL</b></td>
+    <td>港島線</td>
+    <td><b>ISL</b></td>    
+    <td>迪士尼線</td>
+    <td><b>DRL</b></td>
+  </tr>
+  <tr>
+    <td>東涌線</td>
+    <td><b>TCL</b></td>
+    <td>南港島線</td>
+    <td><b>SIL</b></td>
+    <td>荃灣線</td>
+    <td><b>TWL</b></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>屯馬線</td>
+    <td><b>TML</b></td>
+    <td>東鐵線</td>
+    <td><b>EAL</b></td>
+    <td>觀塘線</td>
+    <td><b>KTL</b></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="8">東涌綫車站代碼總覽</th>
+  </tr>
+  <tr>
+    <td>香港</td>
+    <td><b>HOK</b></td>
+    <td>奧運</td>
+    <td><b>OLY</b></td>
+    <td>荔景</td>
+    <td><b>LAK</b></td>
+    <td>欣澳</td>
+    <td><b>SUN</b></td>    
+  </tr>
+  <tr>
+    <td>九龍</td>
+    <td><b>KOW</b></td>
+    <td>南昌</td>
+    <td><b>NAC</b></td>
+    <td>青衣</td>
+    <td><b>TSY</b></td>
+    <td>東涌</td>
+    <td><b>TUC</b></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>訊息描述</th>
+    <th>説明</th>
+  </tr>
+  <tr>
+    <td>6 分鐘</td>
+    <td>下一班車將於 6 分鐘内到達該站。</td>
+  </tr>
+  <tr>
+    <td>即將到達/已離開</td>
+    <td>下一班車將於 1 分鐘内到達該站，代表巴士即將到達或即將離開。</td>
+  </tr>
+  <tr>
+    <td>🔴 非服務時間</td>
+    <td>現時為該路線的非服務時間。</td>
+  </tr>
+</table>
