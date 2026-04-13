@@ -491,6 +491,67 @@ const URL_CONFIG = [
   </tr>
 </table>
 
+### 列車運行方向
+> [!Caution]
+> 請務必定義列車運行方向 `dir`。
+<table>
+  <tr>
+    <th></th>
+    <th>UP (上行) 終點站</th>
+    <th>DOWN (下行) 終點站</th>
+  </tr>
+  <tr>
+    <td><b>東涌線</b></td>
+    <td>香港</td>
+    <td>東涌</td>
+  </tr>
+  <tr>
+    <td><b>機場快線</b></td>
+    <td>香港</td>
+    <td>博覽館</td>
+  </tr>
+  <tr>
+    <td><b>迪士尼線</b></td>
+    <td>迪士尼</td>
+    <td>欣澳</td>
+  </tr>
+  <tr>
+    <td><b>屯馬線</b></td>
+    <td>烏溪沙</td>
+    <td>屯門</td>
+  </tr>
+  <tr>
+    <td><b>將軍澳線</b></td>
+    <td>寶琳 / 康城</td>
+    <td>北角</td>
+  </tr>
+  <tr>
+    <td><b>東鐵線</b></td>
+    <td>金鐘</td>
+    <td>羅湖 / 落馬洲</td>
+  </tr>
+  <tr>
+    <td><b>南港島線</b></td>
+    <td>海怡半島</td>
+    <td>金鐘</td>
+  </tr>
+  <tr>
+    <td><b>港島線</b></td>
+    <td>柴灣</td>
+    <td>堅尼地城</td>
+  </tr>
+  <tr>
+    <td><b>荃灣線</b></td>
+    <td>荃灣</td>
+    <td>中環</td>
+  </tr>
+  <tr>
+    <td><b>觀塘線</b></td>
+    <td>調景嶺</td>
+    <td>黃埔</td>
+  </tr>
+</table>
+
 ### 訊息描述
 <table>
   <tr>
