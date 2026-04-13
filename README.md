@@ -133,6 +133,7 @@ const URL_CONFIG = [
 - 每一個小工具均可自定義顯示<b>最多 5 條 (中尺寸) / 10 條 (大尺寸) 路線</b>
 - 如不定義顯示項目，系統將自動顯示<b>前 5 / 10 條</b>在服務時間内的路線
 - 你可以於主畫面加入多個小工具，但需注意儲存空間限制 (memory limitation)
+
 <img width="90%" alt="Code Screenshot" src="https://github.com/user-attachments/assets/2bccc3d8-7d59-47be-a81f-bef4d40143cc"><br>
 
 <b>設定方法：</b>
