@@ -134,6 +134,7 @@ const URL_CONFIG = [
 - 如不定義顯示項目，系統將自動顯示<b>前 5 / 10 條</b>在服務時間内的路線
 - 你可以於主畫面加入多個小工具，但需注意儲存空間限制 (memory limitation)
 <img width="90%" alt="Code Screenshot" src="https://github.com/user-attachments/assets/2bccc3d8-7d59-47be-a81f-bef4d40143cc"><br>
+
 <b>設定方法：</b>
 
 1. 長按小工具，選擇【編輯小工具】
