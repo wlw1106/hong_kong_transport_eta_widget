@@ -229,7 +229,7 @@ const URL_CONFIG = [
 
 ## 港鐵 (MTR)
 <img src="https://github.com/user-attachments/assets/eac1540b-e071-41a4-ae87-fe4719d01d72" alt="App Screenshot" height="150">
-<img src="https://github.com/user-attachments/assets/ab6a33fc-4c8c-4c47-b674-7d5e232680d0" alt="App Screenshot" height="150">
+<img src="https://github.com/user-attachments/assets/e134ce80-c6df-4580-9dba-dff21be022d5" alt="App Screenshot" height="150">
 
 ### 港鐵路線代碼 (route)
 <table>
