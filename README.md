@@ -178,6 +178,7 @@ const URL_CONFIG = [
 </table>
 
 ## 城巴及城巴機場快線 (CTB)
+<img src="https://github.com/user-attachments/assets/7e92c552-e057-4e0b-84bc-c623d115a535" alt="App Screenshot" height="150">
 
 > [!NOTE]
 > 請<a href="https://ewlricw.rf.gd/chasela2/ctb">按此</a>以查詢城巴的車站代碼。
@@ -188,8 +189,8 @@ const URL_CONFIG = [
     <th>説明</th>
   </tr>
   <tr>
-    <td>6 分鐘</td>
-    <td>下一班車將於 6 分鐘内到達該站。</td>
+    <td>3 分鐘</td>
+    <td>下一班車將於 3 分鐘内到達該站。</td>
   </tr>
   <tr>
     <td>即將到達/已離開</td>
@@ -202,9 +203,10 @@ const URL_CONFIG = [
 </table>
 
 ## 新大嶼山巴士 (NLB)
+<img src="https://github.com/user-attachments/assets/f7d49389-f40e-4a2f-b4e9-ee2fde46173d" alt="App Screenshot" height="150">
 
 > [!NOTE]
-> 請<a href="https://ewlricw.rf.gd/chasela2/nlb">按此</a>以查詢新大嶼山巴士的車站代碼和路線 ID。
+> 請<a href="https://ewlricw.rf.gd/chasela2/nlb">按此</a>以查詢新大嶼山巴士的車站代碼和**路線 ID**。
 
 <table>
   <tr>
@@ -212,8 +214,8 @@ const URL_CONFIG = [
     <th>説明</th>
   </tr>
   <tr>
-    <td>6 分鐘</td>
-    <td>下一班車將於 6 分鐘内到達該站。</td>
+    <td>16 分鐘</td>
+    <td>下一班車將於 16 分鐘内到達該站。</td>
   </tr>
   <tr>
     <td>即將到達/已離開</td>
@@ -556,7 +558,8 @@ const URL_CONFIG = [
 </table>
 
 ### 訊息描述
-<img alt="App Screenshot" src="[https://github.com/user-attachments/assets/2bcdda9a-9d27-4641-9191-1e5b2733a2ff" height="150">
+<img src="https://github.com/user-attachments/assets/adeb0e97-e00d-4639-b477-2b69a7110d1e" alt="App Screenshot" height="150">
+
 <table>
   <tr>
     <th>訊息描述</th>
@@ -587,6 +590,36 @@ const URL_CONFIG = [
     <td>現時為該路線的非服務時間。</td>
   </tr>
 </table>
+
+## 港鐵巴士 (MTRB)
+### 港鐵巴士 (MTRB) 路線與車站設定指南
+
+由於港鐵巴士的車站資料龐大，系統會自動從港鐵開放數據 (Open Data) 動態獲取最新資料。因此，設定 `stn` 代碼時，請遵循以下的**代碼結構邏輯**：
+
+#### 1. 港鐵巴士路線代碼 (route)
+直接填寫巴士路線號碼，常見路線包括：
+* **大埔區**：K12, K14, K17, K18
+* **新界西北 (屯門/元朗/天水圍)**：K52, K52A, K53, K54, K58, K65, K66, K68, K73, K74, K75P, K76, 506 ...等。
+
+#### 2. 車站代碼結構 (stn)
+港鐵巴士的 `stn` 參數是由「**路線 + 方向 + 車站序號**」組合而成的。
+標準格式為：`[路線]-[U/D][序號]`
+
+* **路線**：對應您要查詢的路線（例如 `K54`、`K66`）
+* **方向**：`U` 代表上行 (Upbound)，`D` 代表下行 (Downbound)
+* **序號**：通常為 3 位數字，從 `010` 開始，沿途每站遞增 10（例如：010, 020, 030...）
+
+#### 設定範例對照表
+您可以參考以下範例，推算出您所需車站的代碼：
+
+| 路線 | 車站方向與位置 | `stn` 代碼寫法 |
+| :--- | :--- | :--- |
+| **K17** | K17 **上行**方向，第 **1** 個車站 | `"K17-U010"` |
+| **K54** | K54 **下行**方向，第 **3** 個車站 | `"K54-D030"` |
+| **K54** | K54 **上行**方向，第 **4** 個車站 | `"K54-U040"` |
+| **K66** | K66 **上行**方向，第 **3** 個車站 | `"K66-U030"` |
+
+*(註：如果您未來有建立類似九巴/城巴的 MTRB 車站搜尋網頁，也可以將連結補充在此處，方便使用者一鍵查詢。)*
 
 ## 輕鐵 (LRT)
 ### 輕鐵路線代碼 (route)
