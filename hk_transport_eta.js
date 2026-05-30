@@ -79,7 +79,7 @@ const LRTroute = {
 }
 
 // 港鐵巴士站 數據
-// 設定快取路徑與設定
+// 1. 設定快取路徑與設定
 var url = "https://opendata.mtr.com.hk/data/mtr_bus_stops.csv";
 var fm = FileManager.local(); // 使用本地文件管理
 var cachePath = fm.joinPath(fm.documentsDirectory(), "mtr_bus_stops_cache.csv");
@@ -87,18 +87,19 @@ const cacheMaxAgeMinutes = 7 * 60 * 24; // 快取有效期（例如：7 天）
 
 let csvText = "";
 
-// 檢查快取邏輯
+// 2. 檢查快取邏輯
 if (fm.fileExists(cachePath)) {
   const lastModified = fm.modificationDate(cachePath);
   const now = new Date();
   const ageInMinutes = (now.getTime() - lastModified.getTime()) / (1000 * 60);
 
   if (ageInMinutes < cacheMaxAgeMinutes) {
+    // console.log("使用本地快取數據...");
     csvText = fm.readString(cachePath);
   }
 }
 
-// 若無快取或已過期，則重新下載
+// 3. 若無快取或已過期，則重新下載
 if (!csvText) {
   console.log("從 MTR 下載最新數據...");
   try {
@@ -113,7 +114,7 @@ if (!csvText) {
   }
 }
 
-// 解析數據 (同之前邏輯)
+// 4. 解析數據 (同之前邏輯)
 let lines = csvText.split("\n");
 let MTRBstationModel = {};
 for (let i = 1; i < lines.length; i++) {
@@ -125,24 +126,25 @@ for (let i = 1; i < lines.length; i++) {
 }
 
 // 港鐵巴士路線 數據
-// 設定快取路徑與設定
+// 1. 設定快取路徑與設定
 url = "https://opendata.mtr.com.hk/data/mtr_bus_routes.csv";
 cachePath = fm.joinPath(fm.documentsDirectory(), "mtr_bus_routes_cache.csv");
 
 csvText = "";
 
-// 檢查快取邏輯
+// 2. 檢查快取邏輯
 if (fm.fileExists(cachePath)) {
   const lastModified = fm.modificationDate(cachePath);
   const now = new Date();
   const ageInMinutes = (now.getTime() - lastModified.getTime()) / (1000 * 60);
 
   if (ageInMinutes < cacheMaxAgeMinutes) {
+    // console.log("使用本地快取數據...");
     csvText = fm.readString(cachePath);
   }
 }
 
-// 無快取或已過期，則重新下載
+// 3. 若無快取或已過期，則重新下載
 if (!csvText) {
   console.log("從 MTR 下載最新數據...");
   try {
@@ -157,7 +159,7 @@ if (!csvText) {
   }
 }
 
-// 解析數據 (同之前邏輯)
+// 4. 解析數據 (同之前邏輯)
 lines = csvText.split("\n");
 let MTRBrouteModel = {};
 for (let i = 1; i < lines.length-1; i++) {
@@ -171,6 +173,8 @@ for (let i = 1; i < lines.length-1; i++) {
   MTRBrouteModel[key] = {"I": cols[1].trim().split("至")[0], "O": cols[1].trim().split("至")[1]}
 }
 
+// console.log(MTRBrouteModel)
+
 var inputs = new Array()
 if (args.widgetParameter){
   inputs = args.widgetParameter.split(',').map(Number)
@@ -179,7 +183,8 @@ if (args.widgetParameter){
     inputs.push(k);
   }
 }
-
+// console.log(inputs)
+// 2. 背景：更換為「深海藍」漸變 (適合所有顏色 Label)
 let w = new ListWidget()
 let gradient = new LinearGradient()
 gradient.colors = [new Color("#2c7284"), new Color("#203a43"), new Color("#0f2027")]
@@ -187,7 +192,7 @@ gradient.locations = [0, 0.5, 1]
 w.backgroundGradient = gradient
 w.setPadding(16, 16, 16, 16)
 
-// 數據抓取與左右對齊佈局
+// 3. 數據抓取與左右對齊佈局
 // Example check in Scriptable
 var limit = 5
 if (config.runsInWidget) {
@@ -196,7 +201,7 @@ if (config.runsInWidget) {
     limit = 10
   }
 } else {
-  limit = 5
+  limit = 10
 }
 let i = 0
 let j = 0
@@ -264,33 +269,90 @@ while (i < limit && j < URL_CONFIG.length) {
         let diff = Math.floor((new Date(data.eta) - Date.now()) / 60000)
         timeStr = diff <= 1 ? "即將到站/已離開" : `${diff}分鐘`
       } else { 
-        timeStr = data.rmk_tc ? "🟡 "+data.rmk_tc : "🔴 非服務時間"
+        timeStr = data.rmk_tc ? data.rmk_tc.includes("服務只限於") ? "🔴 非服務時間" : "🟡 "+data.rmk_tc : "🔴 非服務時間"
       }
     } catch (e) { 
       timeStr = "--"
       console.warn('['+item.route+'] '+e)
     }
-  } else if (item.company == "NLB"){}
-  else if (item.company == "TRM"){}
+  } else if (item.company == "NLB"){
+    // NLB
+    try {
+      let req = new Request('https://rt.data.gov.hk/v2/transport/nlb/stop.php?action=estimatedArrivals&routeId='+item.route+'&stopId='+item.stn+'&language=zh')
+      req.timeoutInterval = 10
+      let res = await req.loadJSON()
+      var data = res
+      var time = 0
+      if ("estimatedArrivals" in data){
+        console.log(data.estimatedArrivals)
+        if (data.estimatedArrivals.length > 0){
+          if ("estimatedArrivalTime" in  data.estimatedArrivals[0]){
+            var time = data.estimatedArrivals[0].estimatedArrivalTime
+          }
+        }
+      }
+      
+      let stnReq = new Request('https://rt.data.gov.hk/v2/transport/nlb/stop.php?action=list&routeId='+item.route)
+      stnReq.timeoutInterval = 10
+      let stnRes = await stnReq.loadJSON()
+      for (const i in stnRes.stops){
+        let stop = stnRes.stops[i]
+        if (stop.stopId == item.stn){
+          stnName = stop.stopName_c
+          break
+        }
+      }
+      
+      let routeReq = new Request('https://rt.data.gov.hk/v2/transport/nlb/route.php?action=list')
+      routeReq.timeoutInterval = 10
+      let routeRes = await routeReq.loadJSON()
+      for (const i in routeRes.routes){
+        let routeList = routeRes.routes[i]
+        if (routeList.routeId == item.route){
+          dest = routeList.routeName_c.split(" > ")[1]
+          route = routeList.routeNo
+          break
+        }
+      }
+      
+      if (data && time) {
+        let diff = Math.floor((new Date(time) - Date.now()) / 60000)
+        timeStr = diff <= 1 ? "即將到站/已離開" : `${diff}分鐘`
+      } else {
+        if (stnName == item.stn){
+          timeStr = dest ? "⚠️ 車站編號錯誤" : "⚠️ 路線ID錯誤"
+        } else {
+          timeStr = data.message ? data.message.includes("沒有班次途經本站") ? "🔴 非服務時間" : "🟡 "+data.message : "🔴 非服務時間"
+        }
+      }
+    } catch (e) { 
+      timeStr = "--"
+      console.warn('['+route+'] '+e)
+    }
+  }
   else if (item.company == "GMB"){}
   else if (item.company == "LRT"){
     // LRT
-    stnName = LRTstation[item.stn]
-    dest = LRTroute[item.route]
+    if (item.stn in LRTstation){
+      stnName = LRTstation[item.stn]
+    }
+    if (item.route in LRTroute){
+      if (item.dir.toUpperCase() == "UP"){
+        dest = (LRTroute[item.route] == "天水圍循環綫") ? LRTroute[item.route] : LRTroute[item.route].split("至")[0]
+      } else {
+        dest = (LRTroute[item.route] == "天水圍循環綫") ? LRTroute[item.route] : LRTroute[item.route].split("至")[1]
+      }
+    }
     if ('dir' in item){
       try {
         let req = new Request('https://rt.data.gov.hk/v1/transport/mtr/lrt/getSchedule?station_id='+item.stn)
         req.timeoutInterval = 10
         let res = await req.loadJSON()
         let err = 0
+        var time = 0
         if ("route_list" in res.platform_list[0]){
           var time = 0
           err = 2 // Wrong route
-          if (item.dir == "UP"){
-            dest = (LRTroute[item.route] == "天水圍循環綫") ? LRTroute[item.route] : LRTroute[item.route].split("至")[0]
-          } else {
-            dest = (LRTroute[item.route] == "天水圍循環綫") ? LRTroute[item.route] : LRTroute[item.route].split("至")[1]
-          }
           
           for (let i in res.platform_list){
             for (let j in res.platform_list[i].route_list){
@@ -298,8 +360,12 @@ while (i < limit && j < URL_CONFIG.length) {
               if (lrt.route_no == item.route){
                 err = 3 // Wrong dir
                 if (lrt.dest_ch == dest){
-                  time = lrt.time_ch
-                  break;
+                  if (item.stn == "140" && item.route == "507"){
+                    time = "月台"+i+"："+lrt.time_ch
+                  } else {
+                    time = lrt.time_ch
+                  }
+                  break
                 }
               }
             }
@@ -357,7 +423,7 @@ while (i < limit && j < URL_CONFIG.length) {
       console.warn('['+item.route+'] '+e)
     }
   } else if (item.company == "MTR"){
-  // MTR
+    // MTR
     stnName = mtrStations[stnName]
     route = mtrStations[item.route]
     if ('dir' in item){
@@ -404,7 +470,11 @@ while (i < limit && j < URL_CONFIG.length) {
           if (lastTrain){
             timeStr = "🔴 非服務時間"
           } else {
-            timeStr = res.message ? res.message.replace("此路綫現正實施","🟡 ").replace("，請按此以獲得更多資料。","").replace("列車服務","車務") : "🟡 服務受阻"
+            if (res.message == 'successful'){
+              timeStr = "⚠️ 未能提供資訊"
+            } else {
+              timeStr = res.message ? res.message.replace("此路綫現正實施","🟡 ").replace("，請按此以獲得更多資料。","").replace("列車服務","車務") : "🟡 服務受阻"
+            }
           }
         }
       } catch (e) { 
@@ -421,12 +491,17 @@ while (i < limit && j < URL_CONFIG.length) {
   if ((args.widgetParameter != null && inputs.includes(j) && timeStr !=  "--") || (timeStr !=  "🔴 非服務時間" && inputs.includes(j) && timeStr !=  "--")) {
     i++
     let row = w.addStack()
-  row.centerAlignContent()
+    row.centerAlignContent()
   
     // --- 左側：路線標籤 ---
     let labelBg = row.addStack()
     if (item.company == "MTR"){
-      labelBg.backgroundColor = new Color(transportColors[item.route])
+      if (item.route in transportColors && item.stn in mtrStations){
+        labelBg.backgroundColor = new Color(transportColors[item.route])
+      } else {
+        i--
+        continue
+      }
     } else {
       labelBg.backgroundColor = new Color(transportColors[item.company])
     }
@@ -437,7 +512,6 @@ while (i < limit && j < URL_CONFIG.length) {
     let labelText = labelBg.addText(route+" "+dest)
     labelText.font = Font.blackSystemFont(9.5) // 使用 Black 字體增加厚度
     labelText.centerAlignText()
-	// 確保路線資料不會撞色
     labelText.textColor = (item.company === "CTB" || item.route === "SIL" || item.company === "LRT") ? Color.black() : Color.white()
     
     let stnStack = row.addStack()
@@ -463,7 +537,7 @@ if (i < limit){
   }
 }
 
-// Footer (左時間 | 右 REFRESH)
+// 4. Footer (左時間 | 右 REFRESH)
 let footer = w.addStack()
 footer.centerAlignContent()
 
@@ -487,7 +561,7 @@ btnText.textColor = Color.white()
 // 點擊行為
 w.url = "scriptable:///run/" + encodeURIComponent(Script.name())
 
-// 重新整理時限
+// 重新整理？
 w.refreshAfterDate = new Date(Date.now() + 60000)
 
 // 退回背景並回到桌面
@@ -502,7 +576,7 @@ if (config.runsInWidget) {
     Script.setWidget(new ListWidget())
   }
 } else {
-  //w.presentLarge()
-  w.presentMedium()
+  w.presentLarge()
+  // w.presentMedium()
 }
 Script.complete()
